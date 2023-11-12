@@ -1,0 +1,269 @@
+.back{
+  background: url("./Assets/flirtflow-backg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 91vh;
+  overflow: hidden;
+  
+
+}
+
+.App {
+  text-align: center;
+}
+
+.nav{
+  /* background-color: rgb(230, 228, 228); */
+  height: 6vh;
+  text-decoration: none;
+}
+.F-logo{
+  font-size: 35px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.nav-dt{
+  display: flex;
+  /* border: 1px solid red; */
+  width: 100%;
+  gap: 70%;
+  align-items: left;
+  padding-left: 10px;
+  margin: 10px;
+
+
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  font-size: 22px;
+  width: 100%;
+  height: 40px;
+  gap: 80px;
+  margin: 10px;
+  /* border: 1px solid red; */
+
+}
+
+.App-body {
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0px;
+  margin: auto;
+  height: 91vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  overflow: hidden;
+}
+.flirt{
+  font-size: 35px;
+  color: white;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
+.crt-act{
+  background-color: transparent;
+  color: rgb(173, 168, 168);
+  font-size: 15px;
+  border-radius: 10px;
+  height: 30px;
+  width: 150px;
+  transition: transform 0.2s ease-in-out;
+}
+.crt-act:hover{
+  transform: translateY(-5px);
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  
+}
+.parent-card{
+  margin: auto;
+  height: 87vh;
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pr-data{
+  background-color: rgb(230, 228, 228);
+  border-radius: 10px;
+  width: 30%;
+  margin: auto;
+  height: 80vh;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+.login-pg{
+  height: 80vh;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+  background-color: rgb(230, 228, 228);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.Htwo{
+  padding: 15px;
+}
+.bt-logs{
+  background-color: black;
+  border-radius: 10px;
+  width: 100px;
+  margin-right: 14px;
+  height: 20px;
+  color: white;
+  font-weight: bold;
+
+}
+.log-pg{
+  padding-top: 100px;
+}
+.log-jp{
+  margin: 0;
+  left: 0;
+  font-size: 20px;
+
+}
+.sign-pt{
+  border-radius: 10px;
+  width: 350px;
+  padding: 5px;
+  height: 20px;
+  font-size: 15px;
+
+}
+.users{
+  display: flex;
+  flex-direction: column;
+}
+.tiles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+.card-user{
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+  gap: 40px;
+
+}
+.sidebar{
+  background-color: rgb(230, 228, 228);
+  padding: 20px;
+  width: 400px;
+  border: 2px solid black;
+  text-align: center;
+  cursor: pointer;
+
+}
+.userCard{
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 400px);
+
+}
+.profile {
+  margin: 12px;
+  padding: 20px;
+  width: 450px;
+  height: 60vh;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(230, 228, 228);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.profile img{
+  max-width: 100%;
+  height: 40vh;
+}
+.profile:hover{
+  transform: scale(1.05);
+}
+.iconitis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.likes{
+  height: 25px;
+  width: 70px;
+  margin: 10px;
+  border-radius: 12px;
+  color: black;
+  font-size: 14px;
+  transition: trasform 0.2s;
+}
+.likes{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.like{
+  background-color:transparent;
+
+} */
+.dislike{
+  background-color: greenyellow;
+}
+
+.search{
+  width:138%;
+  height: 3vh;
+  background-color: black;
+  border-radius: 30px;
+  padding: 4px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  /* flex: 1; */
+
+}
+.search-bar{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  width: 99%;
+  border: 1px solid rgb(131, 130, 130);
+  color: #2c2e33;
+  height: 3.6vh;
+  margin-top: 8px;
+  border-radius: 30px;
+}
+.nameed{
+  font-size: 20px;
+  font-family: Haettenschweiler;
+}
+
+.nameed span{
+  color: rgb(201, 53, 53)(246, 15, 15);
+  margin-bottom: 30px;
+
+}
+#app-name{
+  font-size: 30px;
+}
+.sort{
+  margin: 10px;
+}
+.rd-btn{
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.rd-btn:hover{
+  transform: scale(1.5);
+  color: white;
+}
