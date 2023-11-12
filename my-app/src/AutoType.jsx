@@ -1,32 +1,21 @@
-// Import necessary FontAwesome icons in UserData component
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faMessage,
-  faTrashCan,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
 
-// ...
-
-function AutoType({ word, delay, infinite }) {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
+const AutoType = ({ word, delay, infinite }) => {
+  const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
-    const wordLength = word.length;
+    let interval;
 
-    const typeText = () => {
-      setText((prevText) => prevText + word[index]);
-      setIndex((prevIndex) => (prevIndex + 1) % wordLength);
-    };
+    if (infinite) {
+      interval = setInterval(() => {
+        setTextIndex((prevIndex) => (prevIndex + 1) % word.length);
+      }, delay);
+    }
 
-    const timeout = setTimeout(typeText, delay);
+    return () => clearInterval(interval);
+  }, [word, delay, infinite]);
 
-    return () => clearTimeout(timeout);
-  }, [index, delay, word, infinite]);
-
-  return <span>{text}</span>;
-}
+  return <>{word[textIndex]}</>;
+};
 
 export default AutoType;

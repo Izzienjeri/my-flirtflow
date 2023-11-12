@@ -14,7 +14,7 @@ const AuthPage = () => {
       {isLogin ? (
         <Login onSwitchToSignUp={toggleForm} />
       ) : (
-        <SignupForm onSwitchToSignIn={toggleForm} />
+        <AddUser onSwitchToSignIn={toggleForm} />
       )}
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-function AddUser({ onSubmit, onSwitchToSignIn }) {
+function AddUser({ onSwitchToSignIn }) {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -12,30 +12,34 @@ function AddUser({ onSubmit, onSwitchToSignIn }) {
     phone_number: "",
     profile_picture: "",
   });
-  function signingUp(e) {
+
+  const navigate = useNavigate();
+
+  const signingUp = (e) => {
     e.preventDefault();
     const newData = {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     };
+
     fetch("http://localhost:3000/users", newData)
       .then((response) => response.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log("User added successfully:", res);
+        // Redirect to the desired location after successful signup
+        navigate("../users");
+      })
       .catch((error) => console.error("Error adding user:", error));
-  }
+  };
 
-  function handleInputChange(event) {
-    setFormData((prevState) => {
-      return { ...prevState, [event.target.name]: event.target.value };
-    });
-  }
-  const navigate = useNavigate();
-
-  const handlesignUp = () => {
-    navigate("../users");
+  const handleInputChange = (event) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
+    }));
   };
 
   return (
@@ -124,7 +128,7 @@ function AddUser({ onSubmit, onSwitchToSignIn }) {
           />
         </div>
         <div className="log-pg">
-          <button onClick={handlesignUp} className="bt-logs" type="submit">
+          <button onClick={signingUp} className="bt-logs" type="submit">
             Sign Up
           </button>
           <button className="bt-logs" onClick={onSwitchToSignIn}>

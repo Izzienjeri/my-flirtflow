@@ -7,11 +7,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import LikeButton from "./LikeButton";
+import CommentList from "./CommentList"; // Import the CommentList component
 
 function UserData() {
   const [users, setUsers] = useState([]);
   const [genderFilter, setGenderFilter] = useState("All");
   const [searchFilter, setSearchFilter] = useState("");
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/users")
@@ -19,6 +21,19 @@ function UserData() {
       .then((users) => setUsers(users))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const handleCommentClick = (userId) => {
+    setSelectedUserId(userId);
+  };
+
+  const handleCommentSubmit = (commentText) => {
+    // You need to implement the logic to update the comments for the selected user
+    // You can use the user's ID (selectedUserId) to identify the user
+    // Update the comments array for the selected user or send a request to your API to update comments
+    console.log(`User ${selectedUserId} submitted a comment: ${commentText}`);
+    // Clear the selected user after submitting the comment
+    setSelectedUserId(null);
+  };
 
   const filteredData =
     genderFilter === "All"
@@ -112,12 +127,13 @@ function UserData() {
                       icon={faMessage}
                       size="2x"
                       color="#000000"
+                      onClick={() => handleCommentClick(user.id)}
                     />
                   </div>
-                  <div>
-                    <FontAwesomeIcon icon={faTrash} size="2x" color="#000000" />
-                  </div>
                 </div>
+                {selectedUserId === user.id && (
+                  <CommentList userId={user.id} onSubmit={handleCommentSubmit} />
+                )}
               </div>
             ))}
           </div>
