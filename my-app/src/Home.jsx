@@ -7,7 +7,7 @@ import Login from "./Login";
 function Home() {
   const backgroundStyle = {
     backgroundImage:
-      "url('https://media.istockphoto.com/id/823482492/photo/finding-love-online.jpg?s=612x612&w=0&k=20&c=FP7jQ0nl_RNlEyMXavyR_M1S-t1qU843y0riIXny8-M=')",
+      "url('https://media.istockphoto.com/id/899169388/photo/female-hands-holding-valentines-day-heart-above-wooden-table-top-view-xmas-gift-wrapping.jpg?s=612x612&w=0&k=20&c=rbQeZatYaNyJvZMKTk17QO86W2SVOX1neTIXfcj3csw=')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     height: "100vh",
@@ -19,10 +19,12 @@ function Home() {
 
   return (
     <div style={backgroundStyle}>
-      <p>FlirtFlow</p>
+      <p style={{ fontFamily: "'Pacifico', cursive", fontSize: "100px" }}>
+        <span>F</span>lirtFlow
+      </p>
 
       <Link to="/auth">
-        <button className="crt-act">Get Started</button>
+        <button className="crt-act">Find Your Match </button>
       </Link>
     </div>
   );

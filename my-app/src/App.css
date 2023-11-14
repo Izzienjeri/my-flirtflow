@@ -18,8 +18,8 @@
   height: 6vh;
   text-decoration: none;
 }
-.F-logo{
-  font-size: 35px;
+.logo{
+  font-size: 50px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .nav-dt{
@@ -266,4 +266,54 @@
 .rd-btn:hover{
   transform: scale(1.5);
   color: white;
+}
+.crt-act {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  background-color: red;
+  color:black;
+  border-radius: 50px;
+  height: 100px;
+  width: 200px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.crt-act:hover {
+  transform: translateY(-5px);
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+.link-button {
+  text-decoration: none;
+}
+
+.link-button button {
+  background-color:red; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.link-button button:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+.login-pg {
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
