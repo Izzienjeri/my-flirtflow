@@ -17,11 +17,6 @@ function AddUser({ onSwitchToSignIn }) {
 
   const signingUp = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.age || !formData.location) {
-      console.error("Please fill out all required fields.");
-      return;
-    }
-
     const newData = {
       method: "POST",
       headers: {
@@ -34,7 +29,7 @@ function AddUser({ onSwitchToSignIn }) {
       .then((response) => response.json())
       .then((res) => {
         console.log("User added successfully:", res);
-        // Redirecting to the users after successful signup
+        // Redirecting to the desired location after successful signup
         navigate("../users");
       })
       .catch((error) => console.error("Error adding user:", error));

@@ -13,7 +13,9 @@ function UserData() {
   const [users, setUsers] = useState([]);
   const [genderFilter, setGenderFilter] = useState("All");
   const [searchFilter, setSearchFilter] = useState("");
+  const [ageFilter, setAgeFilter] = useState("");
   const [selectedUserId, setSelectedUserId] = useState(null);
+
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((r) => r.json())
@@ -36,9 +38,13 @@ function UserData() {
       ? users
       : users.filter((user) => user.gender === genderFilter);
 
-  const filteredUser = filteredData.filter((user) =>
-    user.name.toLowerCase().includes(searchFilter.toLowerCase())
-  );
+  const filteredUser = filteredData
+    .filter((user) =>
+      user.name.toLowerCase().includes(searchFilter.toLowerCase())
+    )
+    .filter((user) =>
+      ageFilter ? user.age.toString() === ageFilter.toString() : true
+    );
 
   return (
     <div>
@@ -65,6 +71,15 @@ function UserData() {
               <div className="searc con">
                 <FontAwesomeIcon icon={faSearch} size="2x" color="#000000" />
               </div>
+            </div>
+            <div>
+              <p className="nameed">Filter by Age:</p>
+              <input
+                type="number"
+                placeholder="Enter Age"
+                value={ageFilter}
+                onChange={(e) => setAgeFilter(e.target.value)}
+              />
             </div>
             <p className="nameed">Sort by:</p>
             <label>
